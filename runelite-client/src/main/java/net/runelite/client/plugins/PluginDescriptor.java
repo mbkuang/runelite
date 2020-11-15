@@ -60,4 +60,6 @@ public @interface PluginDescriptor
 	boolean loadWhenOutdated() default false;
 
 	boolean loadInSafeMode() default true;
+
+	PluginType type() default PluginType.PVM;
 }

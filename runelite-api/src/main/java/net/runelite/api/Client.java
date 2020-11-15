@@ -768,7 +768,6 @@ public interface Client extends GameEngine
 	 * @param varps passed varbits
 	 * @param varbitId the variable ID
 	 * @return the value
-	 * @see Varbits#id
 	 */
 	@VisibleForDevtools
 	int getVarbitValue(int[] varps, int varbitId);
@@ -779,7 +778,6 @@ public interface Client extends GameEngine
 	 * @param varps passed varps
 	 * @param varpId the VarpPlayer id
 	 * @return the value
-	 * @see VarPlayer#id
 	 */
 	@VisibleForDevtools
 	int getVarpValue(int[] varps, int varpId);
@@ -790,7 +788,6 @@ public interface Client extends GameEngine
 	 * @param varps passed varps
 	 * @param varpId the VarpPlayer id
 	 * @param value the value
-	 * @see VarPlayer#id
 	 */
 	@VisibleForDevtools
 	void setVarpValue(int[] varps, int varpId, int value);
@@ -801,7 +798,6 @@ public interface Client extends GameEngine
 	 * @param varps passed varbits
 	 * @param varbit the variable
 	 * @param value the value
-	 * @see Varbits#id
 	 */
 	@VisibleForDevtools
 	void setVarbitValue(int[] varps, int varbit, int value);
@@ -1787,4 +1783,18 @@ public interface Client extends GameEngine
 	 * @see KeyCode
 	 */
 	boolean isKeyPressed(int keycode);
+
+	/**
+	 * Increments the counter for how many times this npc has been selected to be hidden on death
+	 *
+	 * @param name npc name
+	 */
+	void addHiddenNpcDeath(String name);
+
+	/**
+	 * Decrements the counter for how many times this npc has been selected to be hidden on death
+	 *
+	 * @param name npc name
+	 */
+	void removeHiddenNpcDeath(String name);
 }
